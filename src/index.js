@@ -1,34 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-
+import { CLASSES } from "./classes";
 import "./styles.css";
-
-const CLASSES = [
-  { sigle: "LOG4420", credits: 3 },
-  { sigle: "INF1010", credits: 3 },
-  { sigle: "MTH1102", credits: 2 }
-];
-
-const ClassChoises = ({ classesList, classModifier }) => {
-  const deleteClass = (selectedClass) => {
-    classModifier(selectedClass);
-  };
-  return (
-    <ul className="items">
-      {classesList.map((item) => {
-        return (
-          <li key={item.name} onClick={() => deleteClass(item)}>
-            <div className="item">
-              <p className="item-text">
-                {item.sigle} : {item.credits}
-              </p>
-            </div>
-          </li>
-        );
-      })}
-    </ul>
-  );
-};
+import ClassChoises from "./ClassChoises";
 
 const App = ({ default_classes = CLASSES }) => {
   const [value, setValue] = useState("");
