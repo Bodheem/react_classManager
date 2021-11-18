@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
+import ClassContext from "./ClassContext";
 
-function ClassInput({ classModifier }) {
+function ClassInput() {
   const [value, setValue] = useState("");
+  const { addClass } = useContext(ClassContext);
 
-  const addClass = () => {
-    classModifier(value);
+  const addClassAndReset = () => {
+    addClass(value);
     setValue("");
   };
   return (
     <>
       <input onChange={(e) => setValue(e.target.value)} value={value} />
-      <button onClick={addClass}>+</button>
+      <button onClick={addClassAndReset}>+</button>
       <p>Vous avez entré: {value}</p>
     </>
   );

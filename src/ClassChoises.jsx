@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import ClassContext from "./ClassContext";
 
-const ClassChoises = ({ classesList, classModifier }) => {
-  const deleteClass = (selectedClass) => {
-    classModifier(selectedClass);
-  };
+const ClassChoises = () => {
+  const { classes, deleteClass } = useContext(ClassContext);
   return (
     <>
       <p>Cliquez sur un cours pour le supprimer de la liste</p>
       <ul className="items">
-        {classesList.map((item,i) => {
+        {classes.map((item, i) => {
           return (
             <li key={i} onClick={() => deleteClass(item.sigle)}>
               <div className="item">
