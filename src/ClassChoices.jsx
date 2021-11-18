@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ClassContext from "./ClassContext";
 
-const ClassChoises = () => {
+const ClassChoices = () => {
   const { classes, deleteClass } = useContext(ClassContext);
   return (
     <>
@@ -23,4 +23,4 @@ const ClassChoises = () => {
   );
 };
 
-export default ClassChoises;
+export default ClassChoices;
