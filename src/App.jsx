@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { CLASSES } from "./classes";
 import "./styles.css";
-import ClassChoises from "./ClassChoises";
+import ClassChoices from "./ClassChoices";
 import ClassInput from "./ClassInput";
+import ClassCounter from "./ClassCounter";
 
 const App = ({ default_classes = CLASSES }) => {
   const [classes, setClasses] = useState(default_classes);
@@ -26,7 +27,8 @@ const App = ({ default_classes = CLASSES }) => {
     <div className="App">
       <h1>Mes cours</h1>
       <ClassInput classModifier={addClass} />
-      <ClassChoises classesList={classes} classModifier={deleteClass} />
+      <ClassCounter classes={classes} />
+      <ClassChoices classesList={classes} classModifier={deleteClass} />
     </div>
   );
 };

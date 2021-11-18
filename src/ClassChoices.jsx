@@ -1,6 +1,6 @@
 import React from "react";
 
-const ClassChoises = ({ classesList, classModifier }) => {
+const ClassChoices = ({ classesList, classModifier }) => {
   const deleteClass = (selectedClass) => {
     classModifier(selectedClass);
   };
@@ -24,4 +24,4 @@ const ClassChoises = ({ classesList, classModifier }) => {
   );
 };
 
-export default ClassChoises;
+export default ClassChoices;
