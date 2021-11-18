@@ -1,2 +1,3 @@
-# react_classManager
-Created with CodeSandbox
+# Class Manager
+
+Exemple de base de gestion d'état en React.
