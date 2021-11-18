@@ -8,9 +8,9 @@ const ClassChoises = ({ classesList, classModifier }) => {
     <>
       <p>Cliquez sur un cours pour le supprimer de la liste</p>
       <ul className="items">
-        {classesList.map((item) => {
+        {classesList.map((item,i) => {
           return (
-            <li key={item.name} onClick={() => deleteClass(item)}>
+            <li key={i} onClick={() => deleteClass(item.sigle)}>
               <div className="item">
                 <p className="item-text">
                   {item.sigle} : {item.credits}

@@ -8,8 +8,9 @@ const App = ({ default_classes = CLASSES }) => {
   const [classes, setClasses] = useState(default_classes);
 
   function deleteClass(selectedClass) {
+    console.log(selectedClass);
     let updatedList = [...classes];
-    updatedList = updatedList.filter((x) => x.sigle !== selectedClass.sigle);
+    updatedList = updatedList.filter((x) => x.sigle !== selectedClass);
     setClasses(updatedList);
   }
 
