@@ -1,28 +1,11 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { CLASSES } from "./classes";
 import ClassContext from "./ClassContext";
+import reducer from "./reducer";
 
 const ClassProvider = ({ children }) => {
-  const [classes, setClasses] = useState(CLASSES);
-  function deleteClass(selectedClass) {
-    let updatedList = [...classes];
-    updatedList = updatedList.filter((x) => x.sigle !== selectedClass);
-    setClasses(updatedList);
-  }
-
-  function addClass(newClass) {
-    const updatedList = [...classes];
-    updatedList.push({
-      sigle: newClass,
-      credits: Math.round(Math.random() * 6 + 1),
-    });
-    setClasses(updatedList);
-  }
-  return (
-    <ClassContext.Provider value={{ classes, setClasses, deleteClass, addClass }}>
-      {children}
-    </ClassContext.Provider>
-  );
+  const [state, dispatch] = useReducer(reducer, { classes: CLASSES });
+  return <ClassContext.Provider value={{ state, dispatch }}>{children}</ClassContext.Provider>;
 };
 
 export default ClassProvider;

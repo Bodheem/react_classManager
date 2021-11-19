@@ -1,12 +1,12 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import ClassContext from "./ClassContext";
+import { ACTIONS } from "./reducer";
 
 function ClassInput() {
   const [value, setValue] = useState("");
-  const { addClass } = useContext(ClassContext);
-
+  const { dispatch } = useContext(ClassContext);
   const addClassAndReset = () => {
-    addClass(value);
+    dispatch({ type: ACTIONS.ADD, payload: { sigle: value } });
     setValue("");
   };
   return (
