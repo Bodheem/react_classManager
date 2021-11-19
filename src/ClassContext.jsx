@@ -1,8 +1,5 @@
 import React from "react";
-import { CLASSES } from "./classes";
 
-const ClassContext = React.createContext({
-  classes: CLASSES,
-});
+const ClassContext = React.createContext();
 
 export default ClassContext;
