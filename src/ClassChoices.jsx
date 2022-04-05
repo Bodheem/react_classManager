@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import ClassContext from "./ClassContext";
+import DispatchContext from "./DispatchContext";
 import { ACTIONS } from "./reducer";
 
 const ClassChoices = () => {
-  const { state, dispatch } = useContext(ClassContext);
+  const state = useContext(ClassContext);
+  const dispatch = useContext(DispatchContext);
   return (
     <>
       <p>Cliquez sur un cours pour le supprimer de la liste</p>
