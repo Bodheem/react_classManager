@@ -1,22 +1,21 @@
 {
   "name": "classmanager",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.js",
-  "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-scripts": "5.0.1"
-  },
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "start": "vite",
+    "build": "vite build"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5"
+  }
 }
